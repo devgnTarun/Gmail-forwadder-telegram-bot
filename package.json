@@ -1,0 +1,19 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "googleapis": "^127.0.0",
+    "imap": "^0.8.19",
+    "node-imap": "^0.9.6",
+    "node-telegram-bot-api": "^0.63.0",
+    "socks5-https-client": "^1.2.1"
+  }
+}

@@ -7,7 +7,7 @@ const generateConfig = require('./generateConfig');
 
 // Creating telegram bot 
 const chatId = -1002118992993;
-const bot = new TelegramBot("6816938574:AAGx0LtYVnUT5vvkTFd8h_ds03eWe2NLlz4", { polling: true });
+const bot = new TelegramBot("6645214107:AAEeJ9tPM8uLV54JPvATTdfRuKdtIFXGgpA", { polling: true });
 
 // Function to send a message to the Telegram channel
 async function sendToTelegramChannel(message) {

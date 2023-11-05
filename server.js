@@ -5,8 +5,8 @@ const fs = require("fs");
 const generateConfig = require("./generateConfig");
 
 // Creating telegram bot
-const chatId = -1275675741;
-const bot = new TelegramBot("6546376029:AAFMZaLPGXZpipyfBabW7WA7-HiheZe4Hpk", {
+const chatId = 'CHAT_TOKEN';
+const bot = new TelegramBot("BOT_TOKEN", {
   polling: true,
 });
 
@@ -76,20 +76,20 @@ const auth = {
 
 // Oauhth client keys
 const oAuth2Client = new google.auth.OAuth2(
-  "488958903302-oc86ijfdu47v3a2uq4n1oiba5prtsmr1.apps.googleusercontent.com",
-  "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",
+  "CLIENT_ID",
+  "CLIENT_SECRET",
   "https://developers.google.com/oauthplayground"
 );
 
 // settting refresh token
 oAuth2Client.setCredentials({
   refresh_token:
-    "1//04_j5Ub5S8zQTCgYIARAAGAQSNwF-L9Ir1rui4adoAq0Xy6SMhrb1fP81hDs5zEYu6Na4EBgDAescrjFF9XDZFneSmqYBMyI81Rc",
+    "REFRESH_TOKEN_AUTH",
 });
 
 const readSingleMail = async (id) => {
   try {
-    const url = `https://gmail.googleapis.com/gmail/v1/users/devtar27k@gmail.com/messages/${id}`;
+    const url = `https://gmail.googleapis.com/gmail/v1/users/YOUR_EMAIL/messages/${id}`;
     const { token } = await oAuth2Client.getAccessToken();
     const config = generateConfig(url, token);
     const response = await axios(config);
@@ -128,7 +128,7 @@ const readSingleMail = async (id) => {
     //get attachments
     async function getAttachmentData(attachmentId) {
       try {
-        const url = `https://gmail.googleapis.com/gmail/v1/users/devtar27k@gmail.com/messages/${id}/attachments/${attachmentId}`;
+        const url = `https://gmail.googleapis.com/gmail/v1/users/YOUR_EMAIL/messages/${id}/attachments/${attachmentId}`;
         const { token } = await oAuth2Client.getAccessToken();
         const config = generateConfig(url, token);
         const response = await axios(config);
@@ -159,7 +159,7 @@ const readSingleMail = async (id) => {
 
 const readAndSendMail = async (req, res) => {
   try {
-    const url = `https://gmail.googleapis.com/gmail/v1/users/devtar27k@gmail.com/messages?labelIds=INBOX&maxResults=10`;
+    const url = `https://gmail.googleapis.com/gmail/v1/users/YOUR_EMAIL/messages?labelIds=INBOX&maxResults=10`;
     const { token } = await oAuth2Client.getAccessToken();
     const config = generateConfig(url, token);
     const response = await axios(config);
@@ -200,7 +200,7 @@ setInterval(readAndSendMail, interval);
 // get latest ten emails
 // const inboxEmails = async (id) => {
 //     try {
-//         const url = `https://gmail.googleapis.com/gmail/v1/users/devtar27k@gmail.com/messages?labelIds=INBOX&maxResults=10`;
+//         const url = `https://gmail.googleapis.com/gmail/v1/users/YOUR_EMAIL/messages?labelIds=INBOX&maxResults=10`;
 //         const { token } = await oAuth2Client.getAccessToken();
 //         const config = generateConfig(url, token);
 //         const response = await axios(config);
@@ -214,7 +214,7 @@ setInterval(readAndSendMail, interval);
 // }
 // const singleMailCheck = async (id) => {
 //     try {
-//         const url = `https://gmail.googleapis.com/gmail/v1/users/devtar27k@gmail.com/messages/18b51abc3d18da77`;
+//         const url = `https://gmail.googleapis.com/gmail/v1/users/YOUR_EMAIL/messages/18b51abc3d18da77`;
 //         const { token } = await oAuth2Client.getAccessToken();
 //         const config = generateConfig(url, token);
 //         const response = await axios(config);

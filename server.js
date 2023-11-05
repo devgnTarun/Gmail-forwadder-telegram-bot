@@ -66,12 +66,12 @@ if (fs.existsSync(processedEmailsFile)) {
 // Auth keys
 const auth = {
   type: "OAuth2",
-  user: "sid.cd.varma@gmail.com",
+  user: "YOUR_EMAIL",
   clientId:
-    "488958903302-oc86ijfdu47v3a2uq4n1oiba5prtsmr1.apps.googleusercontent.com",
-  clientSecret: "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",
+    "CLIENT_ID",
+  clientSecret: "SECRET_ID",
   refreshToken:
-    "1//04_j5Ub5S8zQTCgYIARAAGAQSNwF-L9Ir1rui4adoAq0Xy6SMhrb1fP81hDs5zEYu6Na4EBgDAescrjFF9XDZFneSmqYBMyI81Rc",
+    "REFRESH_TOKEN",
 };
 
 // Oauhth client keys
